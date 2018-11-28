@@ -8,6 +8,11 @@ SelectView.prototype.bindEvents = function () {
   PubSub.subscribe('Countries:country-names', (event) => {
     const countryNames = event.detail;
     this.populate(countryNames);
+  });
+
+  this.element.addEventListener('change', (event) => {
+    const optionID = event.target.value;
+    PubSub.publish('SelectView:option-selected', optionID)
   })
 };
 
