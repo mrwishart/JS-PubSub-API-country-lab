@@ -14,7 +14,36 @@ CountryInfoView.prototype.bindEvents = function () {
 CountryInfoView.prototype.renderCountry = function (country) {
   this.element.innerHTML = '';
 
+  countryInfoDiv = document.createElement('div');
+  countryInfoDiv.classList.add('country-info');
+  this.element.appendChild(countryInfoDiv);
 
+  nameElement = document.createElement('h3');
+  nameElement.textContent = country.name;
+  countryInfoDiv.appendChild(nameElement);
+
+  regionElement = document.createElement('p');
+  regionElement.textContent = `Region: ${country.region}`;
+  countryInfoDiv.appendChild(regionElement);
+
+  languageList = document.createElement('ul');
+
+  country.languages.forEach((language) => {
+    languageElement = document.createElement('li');
+    languageElement.textContent = language.name;
+    languageList.appendChild(languageElement);
+  });
+
+  countryInfoDiv.appendChild(languageList)
+
+  countryFlagDiv = document.createElement('div');
+  countryFlagDiv.classList.add('country-flag');
+  this.element.appendChild(countryFlagDiv);
+
+  countryFlagElement = document.createElement('img');
+  countryFlagElement.src = country.flag;
+  countryFlagElement.height = 300;
+  countryFlagDiv.appendChild(countryFlagElement);
 };
 
 module.exports = CountryInfoView;
