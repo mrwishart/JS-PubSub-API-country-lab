@@ -26,7 +26,10 @@ CountryInfoView.prototype.renderCountry = function (country) {
   regionElement.textContent = `Region: ${country.region}`;
   countryInfoDiv.appendChild(regionElement);
 
+
+
   languageList = document.createElement('ul');
+  languageList.textContent = "Language(s):";
 
   country.languages.forEach((language) => {
     languageElement = document.createElement('li');
@@ -42,7 +45,6 @@ CountryInfoView.prototype.renderCountry = function (country) {
 
   countryFlagElement = document.createElement('img');
   countryFlagElement.src = country.flag;
-  countryFlagElement.height = 300;
   countryFlagDiv.appendChild(countryFlagElement);
 };
 

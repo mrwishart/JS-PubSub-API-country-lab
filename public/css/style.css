@@ -1,0 +1,19 @@
+#country {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+  align-items: center;
+}
+
+.country-info {
+  border: black solid 3px;
+  border-radius: 15px;
+  height: min-content;
+  padding: 15px;
+
+}
+
+img {
+  width: 40vw;
+  max-width: 400px;
+}
